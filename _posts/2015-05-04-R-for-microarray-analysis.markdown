@@ -13,7 +13,7 @@ Getting started with R for microarray analysis
 Although programming can be picked up bit-by-bit through memorization of small pieces of code, it is much more efficient to spend a little time to learn the rules of the language — the physics of the R universe — which you can then apply to reading or writing code that you have not previously memorized.
 
 <!-- 
-->![image](RStudio_left_half.png =1000x)<-
+->![image](RStudio_left_half.png)<-
 -->
 
 ![image](/images/RStudio_screenshot.png =500x)
