@@ -1,11 +1,11 @@
 ---
 layout: post
 title: Getting started with R
+date: 15 Apr 2016
+author: Sven Nelson
 ---
-Getting started with R for microarray analysis
-============
-*9/7/2014*  
-**Sven Nelson**
+This is the first installation of the R tutorial for biologists.  This tutorial is designed to teach the basics of R without drowning you in statistics.
+
 
 ## Understanding the physics of the R universe ##
 
@@ -13,10 +13,13 @@ Getting started with R for microarray analysis
 Although programming can be picked up bit-by-bit through memorization of small pieces of code, it is much more efficient to spend a little time to learn the rules of the language — the physics of the R universe — which you can then apply to reading or writing code that you have not previously memorized.
 
 <!-- 
-->![image](RStudio_left_half.png)<-
+->![image](RStudio_left_half.png =500x)<-
+-->
+<!-- 
+![image](../images/RStudio_screenshot.png)
 -->
 
-![image](/images/RStudio_screenshot.png =500x)
+![image](/jekyll-uno/images/RStudio_screenshot.png)
 
 Most of what you will do in R will be in the interpreter.  It is very rare that you will need to write a full program, save it, and execute it.  More often, you will directly enter a command into the interpreter (**bottom-left**), or write a couple of lines of code in a text file (**top-left**) and select this block of code for execution in the interpreter window (**bottom-left**).  
 
