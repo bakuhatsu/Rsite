@@ -13,10 +13,10 @@ Getting started with R for microarray analysis
 Although programming can be picked up bit-by-bit through memorization of small pieces of code, it is much more efficient to spend a little time to learn the rules of the language — the physics of the R universe — which you can then apply to reading or writing code that you have not previously memorized.
 
 <!-- 
-->![image](RStudio_left_half.png =500x)<-
+->![image](RStudio_left_half.png =1000x)<-
 -->
 
-![image](/images/RStudio_screenshot.png)
+![image](/images/RStudio_screenshot.png =500x)
 
 Most of what you will do in R will be in the interpreter.  It is very rare that you will need to write a full program, save it, and execute it.  More often, you will directly enter a command into the interpreter (**bottom-left**), or write a couple of lines of code in a text file (**top-left**) and select this block of code for execution in the interpreter window (**bottom-left**).  
 
