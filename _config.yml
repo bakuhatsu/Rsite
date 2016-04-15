@@ -2,17 +2,17 @@
 title: R tutorial series
 description: 'R tutorial - A guide to R for biologists who may not love statistics'
 url: 'http://joshgerdes.com/jekyll-uno'
-baseurl: '/jekyll-uno/'
+baseurl: '/Rsite/'
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
 
 author:
-  name: 'Josh Gerdes'
-  email: josh@joshgerdes.com
-  twitter_username: joshgerdes
-  facebook_username: joshgerdes
-  github_username:  joshgerdes
-  linkedin_username:  joshgerdes
+  name: 'Sven Nelson'
+  email: nelsonsv@missouri.edu
+  #twitter_username: joshgerdes
+  #facebook_username: joshgerdes
+  github_username:  bakuhatsu
+  linkedin_username:  svenknelson
 
 defaults:
   -
@@ -26,14 +26,19 @@ defaults:
 destination: _site
 paginate: 10
 permalink: /:year/:title/
-markdown: kramdown
+markdown: redcarpet
 highlighter: rouge
 
-kramdown:
-  # use Github Flavored Markdown
-  input: GFM
-  # do not replace newlines by <br>s
-  hard_wrap: false
+#redcarpet:
+#  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "strikethrough", "superscript", "with_toc_data"]
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+
+#kramdown:
+#  # use Github Flavored Markdown
+#  input: GFM
+#  # do not replace newlines by <br>s
+#  hard_wrap: false
 
 gems: ['jekyll-paginate']
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
