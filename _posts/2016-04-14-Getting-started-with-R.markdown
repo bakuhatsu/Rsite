@@ -243,8 +243,6 @@ print(zsquaredloop[1:10])
 Which way was faster?  Be careful of using loops when there is a faster way if you are dealing with large datasets.
 
 ### Data types in R ###
-This post on QuickR give exactly the description I want for this section, so why re-write it:  
-[http://statmethods.net/input/datatypes.html] (http://statmethods.net/input/datatypes.html)
 
 **Basic data types for individual values:**  
 
@@ -273,6 +271,8 @@ Some more useful info on factors here: [http://www.stat.berkeley.edu/~s133/facto
 | lists         	| very similar to vectors, but some functions require one or the other (create with `list()` or change to not a list with `unlist()` Elements in a list can be associated with names, so you can call an element by its index or it's name.  You can also store multiple elements of differen data types within the same list, which is not possible in vectors. |
 	
 You can check the data type of any variable in R by using the `class()` function.  So `class("hello")` would return `"character"` and `class(23)` would return `"numeric"`.  If you call class on a list, it will return `"list"`, not the class of the items within the list, since they might be different.  But if you call class of a vector, it will return the data type of the contents.  So `class(c(1,2,3))` will return `"numeric"`.
+
+Check out Quick-R for more info on data types in R: [http://statmethods.net/input/datatypes.html] (http://statmethods.net/input/datatypes.html)  
 
 ## R functions##
 
@@ -324,3 +324,5 @@ Ok, I know you have been anxious to get to this point.
 2. Make this into a function to use on similar datasets
 3. Use `manipulate` package to make this function interactive.
 4. Test this with other similar datasets.
+
+Required R file: [summary.SE](/Rsite/files/summarySE.R)
