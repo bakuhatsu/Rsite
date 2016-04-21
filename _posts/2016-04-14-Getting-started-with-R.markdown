@@ -262,15 +262,21 @@ Some more useful info on factors here: [http://www.stat.berkeley.edu/~s133/facto
 
 **Data types that are made up of lists or tables of variables include:**  
 
-| Data type     	| Description     | 
-|:------------- 	|:--------------- | 
-| vectors       	| make these with `c()`.  These are lists of elements that are all of the same data type.  You can get an element from a specific index (for example index 1) in the list with vectorName[1].  Remember that in R counting starts from 1, while in some other programming languages (such as python), counting starts from 0.  So the first element of vector x in R is x[1], but in python would be x[0] | 
-| matrices      	|                       |
-| arrays			|							|
-| data frames   	| like an excel sheet, fixed number of rows and columns |
-| lists         	| very similar to vectors, but some functions require one or the other (create with `list()` or change to not a list with `unlist()` Elements in a list can be associated with names, so you can call an element by its index or it's name.  You can also store multiple elements of differen data types within the same list, which is not possible in vectors. |
+| Data type     	| Create with:     | Contents     | Dimensions | 
+|:------------- 	|:--------------- | :--------------- | :--------------- |
+| vectors       	| `c(item1, item2, item3)` | all same data type | 1 (a list of elements) |
+| matrices      	| `mymatrix <- matrix(vector, nrow=r, ncol=c, byrow=FALSE,` <br>`  dimnames=list(char_vector_rownames, char_vector_colnames))` | all same data type | 2 (a table of elements) |
+| arrays			| `array(data = vector, dim = length(data), dimnames = list(char_vector_rownames, char_vector_colnames))` |	all same data type | similar to matrices but can have > 2 dimensions |
+| data frames   	| `column1 <- c(1,2,3,4)` <br>`column2 <- c("red", "white", "red", NA)` <br>`column3 <- c(TRUE,TRUE,TRUE,FALSE)` <br>`df <- data.frame(column1, column2, column3)` <br>`names(df) <- c("ID","Treatment","Measurement") # set column names`  | like an excel sheet, Columns are names and have the same data type within a column, rows can contain different data type and rownames are optional | 2 |
+| lists         	| `list(item1, item2, item3)` or `list(name1 = item1, name2 = item2, name3 = item3)` | multiple types ok | 1 |
 	
 You can check the data type of any variable in R by using the `class()` function.  So `class("hello")` would return `"character"` and `class(23)` would return `"numeric"`.  If you call class on a list, it will return `"list"`, not the class of the items within the list, since they might be different.  But if you call class of a vector, it will return the data type of the contents.  So `class(c(1,2,3))` will return `"numeric"`.
+
+**Note on vectors:**   
+These are lists of elements that are all of the same data type.  You can get an element from a specific index (for example index 1) in the list with vectorName[1].  Remember that in R counting starts from 1, while in some other programming languages (such as python), counting starts from 0.  So the first element of vector x in R is x[1], but in python would be x[0]
+
+**Note on lists:**  
+very similar to vectors, but some functions require one or the other (create with `list()` or change to not a list with `unlist()` Elements in a list can be associated with names, so you can call an element by its index or it's name.  You can also store multiple elements of differen data types within the same list, which is not possible in vectors.
 
 Check out Quick-R for more info on data types in R: [http://statmethods.net/input/datatypes.html] (http://statmethods.net/input/datatypes.html)  
 
