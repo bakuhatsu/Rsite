@@ -1,7 +1,7 @@
 # Site settings
 title: R tutorial series
 description: 'R tutorial - A guide to R for biologists who may not love statistics'
-url: 'http://joshgerdes.com/jekyll-uno'
+# url: 'http://joshgerdes.com/jekyll-uno'
 baseurl: '/Rsite/'
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
