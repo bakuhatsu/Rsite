@@ -5,11 +5,63 @@ author: Sven Nelson
 ---
 This is the first installation of the R tutorial for biologists.  This tutorial is designed to teach the basics of R without drowning you in statistics.
 
+## Why R?##
+**Premise for the course:**  
+Learning to swim with R without drowning in statistics.  R is not just for statisticians and it can be difficult to pick up R if you are also trying to learn the statistics at the same time.   
+
+Here are some reasons to use R and examples of useful things you can do in R:
+
+- Plenty of built-in function for statistics incuding: correlations, t-tests, non-parametric tests (ex: Mann Whitney U, Wilcoxon Signed Rank, Kruskall Wallis Test, Friedman Test), ANOVA, ANCOVA, MANCOVA, cluster analysis (ex: partitioning (k-means), hierarchical agglomerative, and model based), generalized linear models (ex: logistic regression, poisson regression, and survival analysis), bootstrapping, matrix algebra, ...and the list goes on.
+
+- generate beautiful plots (example below from [http://www.cookbook-r.com](http://www.cookbook-r.com))
+![image](http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_(ggplot2)/figure/unnamed-chunk-3-1.png)
+
+- analyze images (ex: [EBImage](http://www.bioconductor.org/packages/2.13/bioc/html/EBImage.html), [archiDART: an R package for the automated computation of plant root architectural traits] (http://link.springer.com/article/10.1007/s11104-015-2673-4/fulltext.html) (shown below))
+![image](https://static-content.springer.com/image/art%3A10.1007%2Fs11104-015-2673-4/MediaObjects/11104_2015_2673_Fig2_HTML.gif)
+
+- Process microarray, RNAseq, ChIP-seq, and RT-qPCR data, while having full control over your data
+
+- make unique types of plots that nobody else has thought of (and therefore do not exist in excel or other programs).  An example of a unique way of plotting data: [OmicCircos: A Simple-to-Use R Package for the Circular Visualization of Multidimensional Omics Data](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3921174/) 
+![image](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3921174/bin/cin-13-2014-013f1.jpg)
+*Circular plots by OmicCircos of expression, CNV, and fusion proteins in 15 Her2 subtype samples from TCGA breast cancer data. Circular tracks from outside to inside: genome positions by chromosomes (black lines are cytobands), expression heatmap of 2000 most variable genes whose locations are indicated by elbow connectors, CNVs (red: gain, blue: loss), correlation p-values between expression and CNV, fusion proteins (intra/inter chromosomes: red/blue). Chromosomes 1–22 are shown in the right half of the circle. Zoomed chromosomes 11 and 17 are displayed in the left half.*
+
+- Reformat dataframes, search excel sheets, remove duplicates, combine multiple spreadsheets and output one with only the desired data, etc
+
+- Shiny webapps: interactive plots that can be viewed from a web browser [http://shiny.rstudio.com](http://shiny.rstudio.com)
+
+- LaTeX tables suitible for publication can be direclty generated from your data
+
+- pretty much anything… R is a fully featured programming language.  You can make it do anything that you want.  You can even make calls to other programming languages (like python, perl, and C++) or the command line from within R.  
+
+**When should you use R?:** A good rule of thumb is that it will be worth the time writing the code if it is anything you will repeat 5 or more times (even simple things you could do in excel).  Write once, use forever.  
+
+## Why RStudio ##
+
+This tutorial will be taught with [RStudio](https://www.rstudio.com).  With most programming languages, there are a lot of good IDEs (Integrated Development Environments) for you to choose from.  With R there are not so many and RStudio has really set the bar as the IDE to use.  (Although the [RKWard](https://rkward.kde.org) IDE has such an apt name.)  One of the reasons for this is because [the people who are developing RStudio](https://www.rstudio.com/about/) include some of the biggest contributers to R packages such as Hadley Wickham, whose work includes `ggplot2`, `plyr`, `reshape`, `lubridate`, `stringer`, `httr`, `roxygen2`, `testthat`, `devtools`, `lineprof`, and `staticdocs`.  RStudio also adds functionalities that are not available with the default R gui that comes bundled when you download R.  For example, you can click the back arrow to see your previous plots, you can save images in any size or format using the drop-down menu, and you can keep track of the variables in your current environment in the environment pane (and even click on data frames to give an excel-like preview without exporting).  And that is just to name a few of the features.  So let's get going, open RStudio and continue reading.
+
+For a (slightly complicated-looking) pdf cheatsheet to using the RStudio IDE:  
+[http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf](http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf)  
+
+My (somewhat simpler) explanation:
+  
+| left half				| right half		 |
+|:-----------------:	|:---------------:|
+| **text editor: <br>write R code**    	| **environment <br>and history**     |   
+| **interpreter: <br>run R code**   | **plots, packages, <br>files, and help** |
 
 ## Understanding the physics of the R universe ##
 
+### Start basic ###
+Although programming can be picked up bit-by-bit through memorization of small pieces of code, it is much more efficient to spend a little time to learn the rules of the language — the physics of the R universe — which you can then apply to reading or writing code that you have not previously memorized.  This may feel a bit basic, but understanding the simple things about R will build a strong foundation to prepare you for advanced topics.  
+  
+![image](http://i2.wp.com/www.vagabondjourney.com/travelogue/wp-content/uploads/monty-python-phrasebook.jpg?w=512)  
+*Image from [http://www.vagabondjourney.com/](http://www.vagabondjourney.com/11-most-important-things-to-know-how-to-say-in-a-foreign-language/)*  
+
+Another way to think about this is that learning the grammar of a programming language is like learning the grammar of a foreign language vs using a phrasebook.  If you just paste together code that you find in the phrasebook then you will improve at a very slow pace, but with a very small amount of (more time consuming) explanation at the beginning, you can pick up the basics of the language, learn the physics of the R universe.  And then you can make it do whatever you want it to.
+  
 ### Running R code ###
-Although programming can be picked up bit-by-bit through memorization of small pieces of code, it is much more efficient to spend a little time to learn the rules of the language — the physics of the R universe — which you can then apply to reading or writing code that you have not previously memorized.
+
+Coding is R is the closest that I have found to what programming/hacking looks like on TV.  For most programming languages, you won't be typing away furiously and executing code as you go.  Instead, you write a program, save it (and possibly compile it), and then run it.  
 
 <!-- 
 ->![image](RStudio_left_half.png =500x)<-
@@ -20,13 +72,13 @@ Although programming can be picked up bit-by-bit through memorization of small p
 
 ![image](/Rsite/images/RStudio_screenshot.png)
 
-Most of what you will do in R will be in the interpreter.  It is very rare that you will need to write a full program, save it, and execute it.  More often, you will directly enter a command into the interpreter (**bottom-left**), or write a couple of lines of code in a text file (**top-left**) and select this block of code for execution in the interpreter window (**bottom-left**).  
+But in R, most of what you will do will be in the interpreter.  It is very rare that you will need to write a full program, save it, and execute it.  More often, you will directly enter a command into the interpreter (**bottom-left pane of RStudio**), or write lines of code in a text file (**top-left pane of RStudio**) and select this block of code for execution in the interpreter window by hitting <kbd>command ⌘</kbd> + <kbd>enter</kbd> (Mac) / <kbd>ctrl</kbd> + <kbd>enter</kbd> (Windows).  Type, execute, get results... how furiously you do this is entirely up to you. 
 
 ### Setting the value of variables ###
 
 At its core programming really comes down to getting and setting values of variable.  In most languages `=` is used as the symbol for defining a variable.  Although `=` will work in R, it is not recommended, since the equals sign is used most often in R to set parameters of a function (such as `plot(x = age, y = height)`), while `a == b` tests the logical statement of whether two values (a and b) are equal to one another.
 
-Instead of `=`, R used `<-` and `->` arrows to set the value of variables.  So if you wanted to set x equal to 4, then you could type:
+Instead of `=`, R uses `<-` and `->` arrows to set the value of variables.  So if you wanted to set x equal to 4, then you could type:
 
 
 ```r
@@ -39,6 +91,31 @@ x <- 4
 # and also (not recommended)
 x = 4 # this is equivalent to x <- 4
 ```
+
+### The usefullness of variables ###
+
+Initially it may not seem obvious why it is so useful to use variables.  After all, we can do something like this in R without variables:  
+
+```r
+# To calculate the cost of my shopping
+(20.99 + 25 + 15.05 + 3.50 + 17) * 1.078 
+```
+I add the values of the items and then add 7.8% tax.  But the code above is both not easy to read and not flexible to changes.  Using variables I can quickly and easily change one variable (such as the tax rate) and run the same code again.  I can also use the same variable in multiple places if needed (say if I wanted to do another list that included beets, but no carrots).    
+
+```r
+# To calculate the cost of my shopping
+carrots <- 20.99 
+beets <- 25
+potatoes <- 15.05 
+spinach <- 3.50 
+marshmallows <- 17 
+taxRate <- 7.8
+
+total = carrots + beets + potatoes + spinach + marshmallows
+totalWithTax <- total * (1 + taxRate/100)
+print(totalTaxRate)
+```
+
 
 ### Vector math in R ###
 
@@ -58,8 +135,8 @@ One of the great benefits of R over some other programming languages is the abil
 ```
 As you can see, we can add 1 and 2 to get three, **or** add 1 to each of the three numbers in the second case to get 3, 4, and 5, **or** we can add two sets of three numbers to each other.  These same rules apply for other mathematical operations.
 
-**Note: Be careful of spaces**
-If you put spaces in the wrong spot you can sometimes get very different results, try to be consistent for easy-to-read code and to minimize mistakes due to unindended commands.
+**Note: Be careful of spaces**  
+Compared to some other programming languages R is pretty flexible in accepting the way that you format your text, but occasionally if you put spaces in the wrong spot you can get very different results, try to be consistent for easy-to-read code and to minimize mistakes due to unindended commands.  A `<-` is use for assigning values, but a `-` can be a negative sign and a `<` can be a less than sign if they have a space in between.
 
 **QUIZ:** What is the output of each of the commands below? What is the value of x and of y after running these commands?  
 
@@ -67,26 +144,44 @@ If you put spaces in the wrong spot you can sometimes get very different results
 # rerun these commands before each number
 x <- 1
 y <- 2
+```
+**At the start x is 1 and y is 2.**   
+(To reveal answers mouse over whitespace after "Output:" and "Value of x and y:")
 
+```r
 # 1
 x <- y
+```
+Output: **<span class="spoiler"><span>no output</span></span>**  
+Value of x and y: **<span class="spoiler"><span>x is 2 and y is 2</span></span>**  
 
+```r
 # 2
 x<-y
+```
+Output: **<span class="spoiler"><span>no output</span></span>**  
+Value of x and y: **<span class="spoiler"><span>x is 2 and y is 2... still the same...</span></span>**  
 
+```r
 # 3
 x <-y
+```
+Output: **<span class="spoiler"><span>no output</span></span>**  
+Value of x and y: **<span class="spoiler"><span>x is 2 and y is 2... so far so good</span></span>** 
 
+```r
 # 4
 x< -y
-
-# 5
-x <-y
-
-# 6 
-x<--y
-
 ```
+Output: **<span class="spoiler"><span>[1] FALSE</span></span>**  
+Value of x and y: **<span class="spoiler"><span>values have not been changed, x is 1 and y is 2</span></span>**
+
+```r
+# 5
+x<--y
+```
+Output: **<span class="spoiler"><span>no output</span></span>**  
+Value of x and y: **<span class="spoiler"><span>x is -2 and y is 2</span></span>**
 
 This ability to do the same process over a vector as over a single value also applies to many R functions:
 
@@ -151,18 +246,33 @@ Which way was faster?  Be careful of using loops when there is a faster way if y
 This post on QuickR give exactly the description I want for this section, so why re-write it:  
 [http://statmethods.net/input/datatypes.html] (http://statmethods.net/input/datatypes.html)
 
-Major types include:  
+**Basic data types for individual values:**  
+
+| Used for:     | Data type     	| other names     | Description     | 
+|:------------- |:------------- 	|:--------------- | :--------------- |
+| numbers    | **numeric**    | Double  	| numbers, ex: 3.0, 24, -100, 2.4, -87.3 |
+| numbers    | **integer**    | int  	| numbers, ex: 3, 24, -100, (no decimals) | 
+| asking a yes/no question    | **logical**   	| boolean | TRUE or FALSE (also T or F), but not true or false |
+| words    | **character**   | String      	| character strings are any text.  define a character by surrounding it with quotes, ex: `"hello"`.  A number surrounded by quotes will be interpreted as a character string, ex `"3"`.|
+
+Note: These are the main categories of data types that you need to worry about, but there are a few others.  Under-the-hood, R will make some decisions to minimize memory usage.  For example, numeric values that are whole numbers will sometimes be saved as `integers`, but can also be saved as `numeric` (Doubles).  Those that are demical numbers will always be saved as `numeric` (Doubles).  Doubles take up more memory than integers.  
+
+**Factors**  
+There is one data type that I didn't mention called `factors` which comes up in R sometimes since the default setting in R when importing a data table is to "import strings as factors".  This means that if you have a column in your data frame that can contain one of three values: control, treatment1, or treatment2, R will create a list of these three values `c("control", "treatment1", "treatment2")` and just store the numbers 1, 2, or 3 corresponding to the position in this list.  Factors are a very efficient way to store strings of this sort, since each unique string is stored only once, and the data itself is stored as a vector of integers.  But factors can sometimes cause trouble, so in most cases it is best to import spreadsheet data with the option `importStringsAsFactors = FALSE` to prevent importing as factors, and instead import just as character strings.
+
+Some more useful info on factors here: [http://www.stat.berkeley.edu/~s133/factors.html](http://www.stat.berkeley.edu/~s133/factors.html)
+
+**Data types that are made up of lists or tables of variables include:**  
 
 | Data type     	| Description     | 
 |:------------- 	|:--------------- | 
-| vectors       	| make these with `c()` | 
+| vectors       	| make these with `c()`.  These are lists of elements that are all of the same data type.  You can get an element from a specific index (for example index 1) in the list with vectorName[1].  Remember that in R counting starts from 1, while in some other programming languages (such as python), counting starts from 0.  So the first element of vector x in R is x[1], but in python would be x[0] | 
 | matrices      	|                       |
 | arrays			|							|
 | data frames   	| like an excel sheet, fixed number of rows and columns |
-| lists         	| very similar to vectors, but some functions require one or the other (create with `list()` or change to not a list with `unlist()` |
-| factors			|							|
-| functions		| functions are not really a data type, but they can be defined in a similar fashion.  |
+| lists         	| very similar to vectors, but some functions require one or the other (create with `list()` or change to not a list with `unlist()` Elements in a list can be associated with names, so you can call an element by its index or it's name.  You can also store multiple elements of differen data types within the same list, which is not possible in vectors. |
 	
+You can check the data type of any variable in R by using the `class()` function.  So `class("hello")` would return `"character"` and `class(23)` would return `"numeric"`.  If you call class on a list, it will return `"list"`, not the class of the items within the list, since they might be different.  But if you call class of a vector, it will return the data type of the contents.  So `class(c(1,2,3))` will return `"numeric"`.
 
 ## R functions##
 
@@ -206,115 +316,11 @@ For example you could do this:
 This allows us to easily do complex calculations without writing out all of the code for individual commands.  Above, we showed that the standard error for the GA measurements was not larger than the standard error for the ABA measurements (just a random example).  Nesting these sorts of calls — making function calls on the returned value of other functions — is the basis of all R data analysis.  We want to type the least amount of code to get the work done.
 
 
-## Lets dive in: importing a micorarray dataset from raw CEL files ##
+## Lets dive in: a hands-on example ##
 
 Ok, I know you have been anxious to get to this point.  
 
-1. Download a dataset from somewhere like ArrayExpress.  This should contain a bunch of .CEL files.  Put this all in a folder somewhere and change that to your working directory with `setwd()` or using the RStudio drop down menu.
-
-```r
-setwd("~/Microarray Data Folder")
-```
-
-2. Next you need to make a targets.txt file which identifies your CEL files and tells R which are replicates of the same condition.
-
-```
-# You need to make the tab-separated Targets.txt file of the format:
-
-Name	FileName	Target
-LerDry.1	Sven-Ler1_Dry-032312-1.CEL	WildType_Dry
-LerDry.2	Sven-Ler2_Dry-032312-2.CEL	WildType_Dry
-LerDry.3	Sven-Ler3_Dry-032312-3.CEL	WildType_Dry
-sly1-2DDry.1	Sven-sly1-2D1_Dry-032312-4.CEL	Dormant_Dry
-sly1-2DDry.2	Sven-sly1-2D2_Dry-032312-5.CEL	Dormant_Dry
-sly1-2DDry.3	Sven-sly1-2D3_Dry-032312-6.CEL	Dormant_Dry
-sly1-2ARDry.1	Sven-sly1-2AR1_Dry-032312-7.CEL	After-ripened_Dry
-sly1-2ARDry.2	Sven-sly1-2AR2_Dry-032312-8.CEL	After-ripened_Dry
-sly1-2ARDry.3	Sven-sly1-2AR3_Dry-032312-9.CEL	After-ripened_Dry
-sly1-2GID1bDry.1	Sven-sly1-2GID1b1_Dry-032312-10.CEL	GID1b-overexpression_Dry
-sly1-2GID1bDry.2	Sven-sly1-2GID1b2_Dry-032312-11.CEL	GID1b-overexpression_Dry
-sly1-2GID1bDry.3	Sven-sly1-2GID1b3_Dry-032312-12.CEL	GID1b-overexpression_Dry
-
-# In this file, the "FileName" is the exact filename of the raw *.CEL files
-# Place this file in your working directory (in this example: "~/Microarray Data Folder")
-```
-
-3. Now run the following code for importin the data:
-
-```r
-Targets <- readTargets("Targets.txt")
-exampleData <- ReadAffy(filenames=Targets$FileName)
-View(Targets) # In RStudio, allows you to see if you read in the targets file correctly
-```
-
-4. Not perform background correction and normalization:
-
-```r
-# Boxplot of data before normalization/background correction
-boxplot(exampleData,names=Targets$Name,las=2)
-## The following will display ##
-# Background correcting
-# Normalizing
-# Calculating Expression
-
-# Boxplot of data after normalization/background correction
-boxplot(data.frame(exprs(esetExampleData.rma)),names=SvenDryTargets$Name,las=2)
-pData(esetSvenDry.rma) # make sure you loaded the correct files
-```
-
-5. Make a backup of the expression set and remove probes that are duplicate, control probes, or probes that do not have a corresponding AGI identifier (eg deprecated probes).
-
-```r
-# backup for safety
-if (is.null(esetSvenDry.rma.backup)) {
-  esetSvenDry.rma.backup <- esetSvenDry.rma  #do not run again or you will overwrite the backup
-}
-
-# Now modify esetSvenDry.rma
-# Use default settings, removes duplicates, probes with no corresponding AGI ID, and control probes
-esetSven.rma <- featureFilter(esetSven.rma.backup)
-# same as nsFilter, but no removal of low variance probesets
-
-## For similar setting using nsFilter:
-
-#esetSven.rma <- nsFilter(esetSven.rma.backup, var.filter = FALSE,na.rm=TRUE) 
-# if you do this one then the next steps use esetSven.rma$eset (and it must be changed everywhere because nsFilter outputs the file in a different format than featureFilter)
-
-```
-
-6. Making the design matrix:
-
-```r
-# write.exprs(esetSvenDry.rma,file="esetSvenDryRMA.txt")
-## To load this from file:
-# esetdata <- read.table(file="~/Microarray\ Data/Microarray\ Data\ (renamed\ files)/esetSvenDryRMA.txt",sep="\t")
-# esetSvenDry.rma <- new("exprSet",exprs = as.matrix(esetdata))
-designSvenDry <- matrix(c(                                         
-  1,0,0,0,1,0,0,0,1,0,0,0, 
-  0,1,0,0,0,1,0,0,0,1,0,0, 
-  0,0,1,0,0,0,1,0,0,0,1,0, 
-  0,0,0,1,0,0,0,1,0,0,0,1
-),byrow=TRUE,nrow=12)
-colnames(designSvenDry) <- 
-  c("WT_Dry", "D_Dry","AR_Dry","GID_Dry")
-designSvenDry
-```
-
-7. Making the comparisons (contrast matrix):
-
-```r
-fitSvenDryIncludeControls <- lmFit(esetSvenDryIncludeControls.rma, designSvenDry)
-contrast.matrixSvenDryIncludeControls <- makeContrasts(D_Dry-WT_Dry, AR_Dry-WT_Dry, AR_Dry-D_Dry, levels=designSvenDry)
-fitSvenDry2IncludeControls <- contrasts.fit(fitSvenDryIncludeControls,contrast.matrixSvenDryIncludeControls)
-fitSvenDry2IncludeControls <- eBayes(fitSvenDry2IncludeControls)
-```
-
-8. Determining significant differential regulation for all genes using false discovery rate for multiple comparison adjustment with a p-value cutoff of 0.05:
-
-```r
-resultsSvenDry1IncludeControls <- decideTests(fitSvenDry2IncludeControls, p.value=0.05)
-# And plot the overlaps
-vennDiagram(resultsSvenDry1IncludeControls)
-```
-
-=> **This post will be updated with more information, but for now, here is the first part** <= 
+1. Import data, format data, summarize data, plot data.
+2. Make this into a function to use on similar datasets
+3. Use `manipulate` package to make this function interactive.
+4. Test this with other similar datasets.
