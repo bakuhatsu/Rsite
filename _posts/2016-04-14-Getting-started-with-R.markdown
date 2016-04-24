@@ -111,7 +111,7 @@ spinach <- 3.50
 marshmallows <- 17 
 taxRate <- 7.8
 
-total = carrots + beets + potatoes + spinach + marshmallows
+total <- carrots + beets + potatoes + spinach + marshmallows
 totalWithTax <- total * (1 + taxRate/100)
 print(totalTaxRate)
 ```
@@ -276,7 +276,7 @@ You can check the data type of any variable in R by using the `class()` function
 These are lists of elements that are all of the same data type.  You can get an element from a specific index (for example index 1) in the list with vectorName[1].  Remember that in R counting starts from 1, while in some other programming languages (such as python), counting starts from 0.  So the first element of vector x in R is x[1], but in python would be x[0]
 
 **Note on lists:**  
-very similar to vectors, but some functions require one or the other (create with `list()` or change to not a list with `unlist()` Elements in a list can be associated with names, so you can call an element by its index or it's name.  You can also store multiple elements of differen data types within the same list, which is not possible in vectors.
+very similar to vectors, but some functions require one or the other (create with `list()` or change to not a list with `unlist()` Elements in a list can be associated with names, so you can call an element by its index or it's name. **(*Actually, you can also do this with vectors by setting `names(vector)`, but this is used less frequently than names for list elements.*)**  You can also store multiple elements of differen data types within the same list, which is not possible in vectors.
 
 Check out Quick-R for more info on data types in R: [http://statmethods.net/input/datatypes.html] (http://statmethods.net/input/datatypes.html)  
 
