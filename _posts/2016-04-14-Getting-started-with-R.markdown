@@ -60,7 +60,7 @@ Or even conditionally replace text as desired and get this:
 | Col wt | 12 | WS | 1	| 13.6 | ... |
 | Col wt | 12 | WS | 2	| 17.7 | ... |
 | Col wt | 12 | WS | 3	| 14.0 | ... |
-| ... | ... | ... | ... | ... | ... |
+| ... | ... | ... | ... | ... | ... |  
 
 - Shiny webapps: interactive plots that can be viewed from a web browser [http://shiny.rstudio.com](http://shiny.rstudio.com)
 
