@@ -25,7 +25,42 @@ Here are some reasons to use R and examples of useful things you can do in R:
 ![image](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3921174/bin/cin-13-2014-013f1.jpg)
 *Circular plots by OmicCircos of expression, CNV, and fusion proteins in 15 Her2 subtype samples from TCGA breast cancer data. Circular tracks from outside to inside: genome positions by chromosomes (black lines are cytobands), expression heatmap of 2000 most variable genes whose locations are indicated by elbow connectors, CNVs (red: gain, blue: loss), correlation p-values between expression and CNV, fusion proteins (intra/inter chromosomes: red/blue). Chromosomes 1–22 are shown in the right half of the circle. Zoomed chromosomes 11 and 17 are displayed in the left half.*
 
-- Reformat dataframes, search excel sheets, remove duplicates, combine multiple spreadsheets and output one with only the desired data, etc
+- Reformat dataframes, search excel sheets, remove duplicates, combine multiple spreadsheets and output one with only the desired data, in the desired format.  This can be very powerful when you have very large spreadsheets that you could not possibly edit by hand.    
+For example, you have a spreadsheet with columns like this and a very large number of rows:  
+
+| Sample name		| measurement	 | ... |
+|:-----------------:|:---------------:|:---------------:|
+| Col wt 12days watered #1  	| 24.7 | ... |
+| Col wt 12days watered #2  	| 21.2 | ... |
+| Col wt 12days watered #3  	| 23.5 | ... |
+| Col wt 12days drought #1  	| 13.6 | ... |
+| Col wt 12days drought #2  	| 17.7 | ... |
+| Col wt 12days drought #3  	| 14.0 | ... |
+| ...  	| ... | ... |
+
+You can use R to quickly convert it to a spreadsheet with columns like this:
+
+| ecotype | imibibition time | condition | rep		| measurement	 | ... |
+|:------:|:------:|:------:|:------:|:------:|:------:|
+| Col wt | 12days | watered | #1	| 24.7 | ... |
+| Col wt | 12days | watered | #2	| 21.2 | ... |
+| Col wt | 12days | watered | #3	| 23.5 | ... |
+| Col wt | 12days | drought | #1	| 13.6 | ... |
+| Col wt | 12days | drought | #2	| 17.7 | ... |
+| Col wt | 12days | drought | #3	| 14.0 | ... |
+| ... | ... | ... | ... | ... | ... |
+
+Or even conditionally replace text as desired and get this:
+
+| ecotype | imibibition <br>time (days) | Well Watered <br>or Water Stress | rep		| measurement	 | ... |
+|:------:|:------:|:------:|:------:|:------:|:------:|
+| Col wt | 12 | WW | 1	| 24.7 | ... |
+| Col wt | 12 | WW | 2	| 21.2 | ... |
+| Col wt | 12 | WW | 3	| 23.5 | ... |
+| Col wt | 12 | WS | 1	| 13.6 | ... |
+| Col wt | 12 | WS | 2	| 17.7 | ... |
+| Col wt | 12 | WS | 3	| 14.0 | ... |
+| ... | ... | ... | ... | ... | ... |
 
 - Shiny webapps: interactive plots that can be viewed from a web browser [http://shiny.rstudio.com](http://shiny.rstudio.com)
 
