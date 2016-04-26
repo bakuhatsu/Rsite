@@ -68,7 +68,7 @@ Or even conditionally replace text/add abbreviations as desired and get this:
 
 - Shiny webapps: interactive plots that can be viewed from a web browser [http://shiny.rstudio.com](http://shiny.rstudio.com)
 
-- LaTeX tables suitible for publication can be direclty generated from your data
+- LaTeX tables suitible for publication can be directly generated from your data
 
 - pretty much anything… R is a fully featured programming language.  You can make it do anything that you want.  You can even make calls to other programming languages (like python, perl, and C++) or the command line from within R.  
 
