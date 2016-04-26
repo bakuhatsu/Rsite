@@ -25,8 +25,11 @@ Here are some reasons to use R and examples of useful things you can do in R:
 ![image](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3921174/bin/cin-13-2014-013f1.jpg)
 *Circular plots by OmicCircos of expression, CNV, and fusion proteins in 15 Her2 subtype samples from TCGA breast cancer data. Circular tracks from outside to inside: genome positions by chromosomes (black lines are cytobands), expression heatmap of 2000 most variable genes whose locations are indicated by elbow connectors, CNVs (red: gain, blue: loss), correlation p-values between expression and CNV, fusion proteins (intra/inter chromosomes: red/blue). Chromosomes 1–22 are shown in the right half of the circle. Zoomed chromosomes 11 and 17 are displayed in the left half.*
 
-- Reformat dataframes, search excel sheets, remove duplicates, combine multiple spreadsheets and output one with only the desired data, in the desired format.  This can be very powerful when you have very large spreadsheets that you could not possibly edit by hand.    
-For example, you have a spreadsheet with columns like this and a very large number of rows:  
+- Reformat dataframes, search excel sheets, remove duplicates, combine multiple spreadsheets and output one with only the desired data, in the desired format.  This can be very powerful when you have very large spreadsheets that you could not possibly edit by hand. For example... 
+
+<center>
+
+You have a spreadsheet with columns like this and a very large number of rows:  
 
 | Sample name		| measurement	 | ... |
 |:-----------------:|:---------------:|:---------------:|
@@ -50,7 +53,7 @@ You can use R to quickly convert it to a spreadsheet with columns like this:
 | Col wt | 12days | drought | #3	| 14.0 | ... |
 | ... | ... | ... | ... | ... | ... |
 
-Or even conditionally replace text as desired and get this:
+Or even conditionally replace text/add abbreviations as desired and get this:
 
 | ecotype | imibibition <br>time (days) | Well Watered <br>or Water Stress | rep		| measurement	 | ... |
 |:------:|:------:|:------:|:------:|:------:|:------:|
@@ -61,6 +64,7 @@ Or even conditionally replace text as desired and get this:
 | Col wt | 12 | WS | 2	| 17.7 | ... |
 | Col wt | 12 | WS | 3	| 14.0 | ... |
 | ... | ... | ... | ... | ... | ... |  
+</center>  
 
 - Shiny webapps: interactive plots that can be viewed from a web browser [http://shiny.rstudio.com](http://shiny.rstudio.com)
 
