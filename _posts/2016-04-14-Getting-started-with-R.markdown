@@ -82,19 +82,25 @@ For a (slightly complicated-looking) pdf cheatsheet to using the RStudio IDE:
 [http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf](http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf)  
 
 My (somewhat simpler) explanation:
+
+<center>  
   
 | left half				| right half		 |
 |:-----------------:	|:---------------:|
 | **text editor: <br>write R code**    	| **environment <br>and history**     |   
 | **interpreter: <br>run R code**   | **plots, packages, <br>files, and help** |
 
+</center>
+
 ## Understanding the physics of the R universe ##
 
 ### Start basic ###
 Although programming can be picked up bit-by-bit through memorization of small pieces of code, it is much more efficient to spend a little time to learn the rules of the language — the physics of the R universe — which you can then apply to reading or writing code that you have not previously memorized.  This may feel a bit basic, but understanding the simple things about R will build a strong foundation to prepare you for advanced topics.  
-  
+
+<center> 
 ![image](http://i2.wp.com/www.vagabondjourney.com/travelogue/wp-content/uploads/monty-python-phrasebook.jpg?w=512)  
 *Image from [http://www.vagabondjourney.com/](http://www.vagabondjourney.com/11-most-important-things-to-know-how-to-say-in-a-foreign-language/)*  
+</center>
 
 Another way to think about this is that learning the grammar of a programming language is like learning the grammar of a foreign language vs using a phrasebook.  If you just paste together code that you find in the phrasebook then you will improve at a very slow pace, but with a very small amount of (more time consuming) explanation at the beginning, you can pick up the basics of the language, learn the physics of the R universe.  And then you can make it do whatever you want it to.
   
