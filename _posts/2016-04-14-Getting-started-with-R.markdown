@@ -289,7 +289,7 @@ Which way was faster?  Be careful of using loops when there is a faster way if y
 |:------------- |:------------- 	|:--------------- | :--------------- |
 | numbers    | **numeric**    | Double  	| numbers, ex: 3.0, 24, -100, 2.4, -87.3 |
 | numbers    | **integer**    | int  	| numbers, ex: 3, 24, -100, (no decimals) | 
-| asking a yes/no question    | **logical**   	| boolean | TRUE or FALSE (also T or F), but not true or false |
+| asking a yes/no question    | **logical**   	| boolean | `TRUE` or `FALSE` (also `T` or `F`), but not `true` or `false` |
 | words    | **character**   | String      	| character strings are any text.  define a character by surrounding it with quotes, ex: `"hello"`.  A number surrounded by quotes will be interpreted as a character string, ex `"3"`.|
 
 Note: These are the main categories of data types that you need to worry about, but there are a few others.  Under-the-hood, R will make some decisions to minimize memory usage.  For example, numeric values that are whole numbers will sometimes be saved as `integers`, but can also be saved as `numeric` (Doubles).  Those that are demical numbers will always be saved as `numeric` (Doubles).  Doubles take up more memory than integers.  
