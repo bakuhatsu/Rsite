@@ -27,8 +27,6 @@ Here are some reasons to use R and examples of useful things you can do in R:
 
 - Reformat dataframes, search excel sheets, remove duplicates, combine multiple spreadsheets and output one with only the desired data, in the desired format.  This can be very powerful when you have very large spreadsheets that you could not possibly edit by hand. For example... 
 
-<center>
-
 You have a spreadsheet with columns like this and a very large number of rows:  
 
 | Sample name		| measurement	 | ... |
@@ -63,8 +61,7 @@ Or even conditionally replace text/add abbreviations as desired and get this:
 | Col wt | 12 | WS | 1	| 13.6 | ... |
 | Col wt | 12 | WS | 2	| 17.7 | ... |
 | Col wt | 12 | WS | 3	| 14.0 | ... |
-| ... | ... | ... | ... | ... | ... |  
-</center>  
+| ... | ... | ... | ... | ... | ... |   
 
 - Shiny webapps: interactive plots that can be viewed from a web browser [http://shiny.rstudio.com](http://shiny.rstudio.com)
 
@@ -82,25 +79,20 @@ For a (slightly complicated-looking) pdf cheatsheet to using the RStudio IDE:
 [http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf](http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf)  
 
 My (somewhat simpler) explanation:
-
-<center>  
   
 | left half				| right half		 |
-|:-----------------:	|:---------------:|
+|:-----------------:|:---------------:|
 | **text editor: <br>write R code**    	| **environment <br>and history**     |   
-| **interpreter: <br>run R code**   | **plots, packages, <br>files, and help** |
-</center>
+| **interpreter: <br>run R code**   | **plots, packages, <br>files, and help** |  
 
 ## Understanding the physics of the R universe ##
 
 ### Start basic ###
 Although programming can be picked up bit-by-bit through memorization of small pieces of code, it is much more efficient to spend a little time to learn the rules of the language — the physics of the R universe — which you can then apply to reading or writing code that you have not previously memorized.  This may feel a bit basic, but understanding the simple things about R will build a strong foundation to prepare you for advanced topics.  
 
-<center> 
-
+{: .center}
 ![image](http://i2.wp.com/www.vagabondjourney.com/travelogue/wp-content/uploads/monty-python-phrasebook.jpg?w=512)  
 *Image from [http://www.vagabondjourney.com/](http://www.vagabondjourney.com/11-most-important-things-to-know-how-to-say-in-a-foreign-language/)*  
-</center>
 
 Another way to think about this is that learning the grammar of a programming language is like learning the grammar of a foreign language vs using a phrasebook.  If you just paste together code that you find in the phrasebook then you will improve at a very slow pace, but with a very small amount of (more time consuming) explanation at the beginning, you can pick up the basics of the language, learn the physics of the R universe.  And then you can make it do whatever you want it to.
   
@@ -292,7 +284,7 @@ Which way was faster?  Be careful of using loops when there is a faster way if y
 **Basic data types for individual values:**  
 
 | Used for:     | Data type     	| other names     | Description     | 
-|:------------- |:------------- 	|:--------------- | :--------------- |
+|:-------------|:-------------|:---------------|:-------------|
 | numbers    | **numeric**    | Double  	| numbers, ex: 3.0, 24, -100, 2.4, -87.3 |
 | numbers    | **integer**    | int  	| numbers, ex: 3, 24, -100, (no decimals) | 
 | asking a yes/no question    | **logical**   	| boolean | `TRUE` or `FALSE` (also `T` or `F`), but not `true` or `false` |
@@ -308,7 +300,7 @@ Some more useful info on factors here: [http://www.stat.berkeley.edu/~s133/facto
 **Data types that are made up of lists or tables of variables include:**  
 
 | Data type     	| Create with:     | Contents     | Dimensions | 
-|:------------- 	|:--------------- | :--------------- | :--------------- |
+|:-------------|:---------------|:--------------|:-----------|
 | vectors       	| `c(item1, item2, item3)` | all same data type | 1 (a list of elements) |
 | matrices      	| `mymatrix <- matrix(vector, nrow=r, ncol=c, byrow=FALSE,` <br>`  dimnames=list(char_vector_rownames, char_vector_colnames))` | all same data type | 2 (a table of elements) |
 | arrays			| `array(data = vector, dim = length(data), dimnames = list(char_vector_rownames, char_vector_colnames))` |	all same data type | similar to matrices but can have > 2 dimensions |

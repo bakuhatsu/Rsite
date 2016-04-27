@@ -130,6 +130,11 @@ line-height:1.4;
 white-space:nowrap;
 }
 
+/* To center images */
+.center {
+    text-align: center;
+}
+
 pre.highlight,
 .highlight pre {
   padding: 10px;
