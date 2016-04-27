@@ -153,25 +153,6 @@ totalWithTax <- total * (1 + taxRate/100)
 print(totalTaxRate)
 ```
 
-
-### Vector math in R ###
-
-One of the great benefits of R over some other programming languages is the ability to apply a command to a vector as easily as to a single variable.  For example (`>` indicates running these commands in the interpreter):
-
-```r 
-> x <- 1
-> y <- 2
-> x + y
-[1] 3
-> x <- c(1,2,3) # a vector of 3 numbers
-> x + y
-[1] 3 4 5
-> y <- c(3,2,1) # now both x and y are vectors
-> x + y
-[1] 4 4 4
-```
-As you can see, we can add 1 and 2 to get three, **or** add 1 to each of the three numbers in the second case to get 3, 4, and 5, **or** we can add two sets of three numbers to each other.  These same rules apply for other mathematical operations.
-
 **Note: Be careful of spaces**  
 Compared to some other programming languages R is pretty flexible in accepting the way that you format your text, but occasionally if you put spaces in the wrong spot you can get very different results, try to be consistent for easy-to-read code and to minimize mistakes due to unindended commands.  A `<-` is use for assigning values, but a `-` can be a negative sign and a `<` can be a less than sign if they have a space in between.
 
@@ -219,6 +200,60 @@ x<--y
 ```
 Output: **<span class="spoiler"><span>no output</span></span>**  
 Value of x and y: **<span class="spoiler"><span>x is -2 and y is 2</span></span>**
+
+
+### Loops in R ###
+
+In most programming languages, if you wanted to do the same action to every element of a list (or column) you would probably use a loop.  In R, there are there are two ways to do for loops:
+
+If you have a vector of values like this:  
+
+```r
+animals <- c(“cat”, “dog”, “pig”, “camel")
+```
+
+1) Using the first method, you can do this:  
+
+```r
+for (animal in animals) {
+	print(animal)
+}
+```
+
+2) The other way to do this (which is somewhat more powerful) is the way that uses `i` (the index of an object in the list)   
+
+```r
+for (i in 1:length(animals)) {
+	print(animals[i])
+}
+```
+
+Both methods will print the same output: the name of each animal in the order given by the list, with one animal per line.  The only reason that the second method is "more powerful" is because it gives us access to `i`, rather than just the `i`<sup>th</sup> element of the list.  This means that we could use `i` to take the `i`<sup>th</sup> element of a different list (or maybe a different column of the same data frame, for example).    
+
+**For more thoughts on loops in R:**
+[http://paleocave.sciencesortof.com/2013/03/writing-a-for-loop-in-r/](http://paleocave.sciencesortof.com/2013/03/writing-a-for-loop-in-r/)
+
+Loops allow you do an action over a long list of items without rewriting the code for every item in the list.  This is very useful, but long loops can be slow to run in R...  
+
+...Not to worry!  One of the greatest strengths of R is the ability to do vectorized actions.  Vectorization means doing something to all elements of a list at once and with (close to) the speed of doing the same action to one item of the list.  This means that you very rarely need to write loops in R, and should try to do things the vector way, rather than using a loop if it is an option.
+
+### Vectorization in R ###
+
+One of the great benefits of R over some other programming languages is the ability to apply a command to a vector as easily as to a single variable.  For example (`>` indicates running these commands in the interpreter):
+
+```r 
+> x <- 1
+> y <- 2
+> x + y
+[1] 3
+> x <- c(1,2,3) # a vector of 3 numbers
+> x + y
+[1] 3 4 5
+> y <- c(3,2,1) # now both x and y are vectors
+> x + y
+[1] 4 4 4
+```
+As you can see, we can add 1 and 2 to get three, **or** add 1 to each of the three numbers in the second case to get 3, 4, and 5, **or** we can add two sets of three numbers to each other.  These same rules apply for other mathematical operations.  
 
 This ability to do the same process over a vector as over a single value also applies to many R functions:
 
