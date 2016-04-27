@@ -232,7 +232,7 @@ Both methods will print the same output: the name of each animal in the order gi
 
 Loops allow you do an action over a long list of items without rewriting the code for every item in the list.  This is very useful, but long loops can be slow to run in R...  
 
-...Not to worry!  One of the greatest strengths of R is the ability to do vectorized actions.  Vectorization means doing something to all elements of a list at once and with (close to) the speed of doing the same action to one item of the list.  This means that you very rarely need to write loops in R, and should try to do things the vector way, rather than using a loop if it is an option.
+...Not to worry!  One of the greatest strengths of R is the ability to do vectorized actions.  Vectorization means doing something to all elements of a list at once and with (close to) the speed of doing the same action to one item of the list.  This means that you very rarely need to write loops in R, and should try to do things the vector way, rather than using a loop if it is an option.   
 
 **For more thoughts on for loops in R:**  
 [http://paleocave.sciencesortof.com/2013/03/writing-a-for-loop-in-r/](http://paleocave.sciencesortof.com/2013/03/writing-a-for-loop-in-r/)
