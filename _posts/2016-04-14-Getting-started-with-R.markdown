@@ -89,7 +89,6 @@ My (somewhat simpler) explanation:
 |:-----------------:	|:---------------:|
 | **text editor: <br>write R code**    	| **environment <br>and history**     |   
 | **interpreter: <br>run R code**   | **plots, packages, <br>files, and help** |
-
 </center>
 
 ## Understanding the physics of the R universe ##
@@ -98,6 +97,7 @@ My (somewhat simpler) explanation:
 Although programming can be picked up bit-by-bit through memorization of small pieces of code, it is much more efficient to spend a little time to learn the rules of the language — the physics of the R universe — which you can then apply to reading or writing code that you have not previously memorized.  This may feel a bit basic, but understanding the simple things about R will build a strong foundation to prepare you for advanced topics.  
 
 <center> 
+
 ![image](http://i2.wp.com/www.vagabondjourney.com/travelogue/wp-content/uploads/monty-python-phrasebook.jpg?w=512)  
 *Image from [http://www.vagabondjourney.com/](http://www.vagabondjourney.com/11-most-important-things-to-know-how-to-say-in-a-foreign-language/)*  
 </center>
