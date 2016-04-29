@@ -75,16 +75,6 @@ Or even conditionally replace text/add abbreviations as desired and get this:
 
 This tutorial will be taught with [RStudio](https://www.rstudio.com).  With most programming languages, there are a lot of good IDEs (Integrated Development Environments) for you to choose from.  With R there are not so many and RStudio has really set the bar as the IDE to use.  (Although the [RKWard](https://rkward.kde.org) IDE has such an apt name.)  One of the reasons for this is because [the people who are developing RStudio](https://www.rstudio.com/about/) include some of the biggest contributers to R packages such as Hadley Wickham, whose work includes `ggplot2`, `plyr`, `reshape`, `lubridate`, `stringer`, `httr`, `roxygen2`, `testthat`, `devtools`, `lineprof`, and `staticdocs`.  RStudio also adds functionalities that are not available with the default R gui that comes bundled when you download R.  For example, you can click the back arrow to see your previous plots, you can save images in any size or format using the drop-down menu, and you can keep track of the variables in your current environment in the environment pane (and even click on data frames to give an excel-like preview without exporting).  And that is just to name a few of the features.  So let's get going, open RStudio and continue reading.
 
-For a (slightly complicated-looking) pdf cheatsheet to using the RStudio IDE:  
-[http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf](http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf)  
-
-My (somewhat simpler) explanation:
-  
-| left half				| right half		 |
-|:-----------------:|:---------------:|
-| **text editor: <br>write R code**    	| **environment <br>and history**     |   
-| **interpreter: <br>run R code**   | **plots, packages, <br>files, and help** |  
-
 ## Understanding the physics of the R universe ##
 
 ### Start basic ###
@@ -110,6 +100,17 @@ Coding is R is the closest that I have found to what programming/hacking looks l
 ![image](/Rsite/images/RStudio_screenshot.png)
 
 But in R, most of what you will do will be in the interpreter.  It is very rare that you will need to write a full program, save it, and execute it.  More often, you will directly enter a command into the interpreter (**bottom-left pane of RStudio**), or write lines of code in a text file (**top-left pane of RStudio**) and select this block of code for execution in the interpreter window by hitting <kbd>command ⌘</kbd> + <kbd>enter</kbd> (Mac) / <kbd>ctrl</kbd> + <kbd>enter</kbd> (Windows).  Type, execute, get results... how furiously you do this is entirely up to you. 
+
+For a (slightly complicated-looking) pdf cheatsheet to using the RStudio IDE:  
+[http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf](http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf)  
+
+My (somewhat simpler) explanation:
+  
+| left half				| right half		 |
+|:-----------------:|:---------------:|
+| **text editor: <br>write R code**    	| **environment <br>and history**     |   
+| **interpreter: <br>run R code**   | **plots, packages, <br>files, and help** |  
+
 
 ### Setting the value of variables ###
 
