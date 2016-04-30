@@ -3,6 +3,13 @@
 
 /* Modifications */
 
+.prev {
+	float: left;
+}
+.next {
+	float: right;
+}
+
 table a:link {
 	color: #666;
 	font-weight: bold;
@@ -128,6 +135,24 @@ margin:0 0.1em;
 text-shadow:0 1px 0 #fff;
 line-height:1.4;
 white-space:nowrap;
+}
+
+.PageNavigation {
+  font-size: 14px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+}
+
+.PageNavigation .next {
+  text-align: right;
 }
 
 /* To center images */

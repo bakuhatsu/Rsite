@@ -2,6 +2,8 @@
 layout: post
 title: Getting started with R
 author: Sven Nelson
+categories: [R tutorial]
+tags: [Part 1]
 ---
 This is the first installation of the R tutorial for biologists.  This tutorial is designed to teach the basics of R without drowning you in statistics.
 

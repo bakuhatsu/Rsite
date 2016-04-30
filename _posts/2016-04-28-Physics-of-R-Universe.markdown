@@ -2,6 +2,8 @@
 layout: post
 title: Understanding the physics of the R universe
 author: Sven Nelson
+categories: [R tutorial]
+tags: [Part 2]
 ---
 Now that you know why to use R, lets get you started by explaining some of the basics of the R language.
 

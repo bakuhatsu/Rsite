@@ -2,6 +2,8 @@
 layout: post
 title: Lets dive in - a hands-on example
 author: Sven Nelson
+categories: [R tutorial]
+tags: [Part 3]
 ---
 Now it's time to actually start coding!  Open up RStudio and follow along below.  We'll do an example project using real data from The National Center for Enviromental Information.
 
