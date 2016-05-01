@@ -140,7 +140,7 @@ In most programming languages, if you wanted to do the same action to every elem
 If you have a vector of values like this:  
 
 ```r
-animals <- c(“cat”, “dog”, “pig”, “camel")
+animals <- c("cat", "dog", "pig", "camel")
 ```
 
 1) Using the first method, you can do this:  
