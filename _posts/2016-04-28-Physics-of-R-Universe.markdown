@@ -135,7 +135,30 @@ Value of x and y: **<span class="spoiler"><span>x is -2 and y is 2</span></span>
 
 ## For loops in R ##
 
-In most programming languages, if you wanted to do the same action to every element of a list (or column) you would probably use a **for loop**.  In R, there are there are two ways to do **for loops**:
+In most programming languages, if you wanted to do the same action to every element of a list (or column) you would probably use a **for loop**.  We tend to think of a programming language as something that was made for a computer to read, when, in fact, it is quite the contrary.  Computers read code as `1010010101...` directly.  Programming languages were made for humans.  So the words that are used for commands in programming languages usually mean something similar to what they would mean in plain English.  
+
+### Loops in the real world ###
+Here is an example of a real world equivalent of a **for loop**:
+You are a plant scientist who is labeling seed envelopes.  You have 1000 envelpes and 1 undergraduate researcher.  In this case, the undergraduate researcher is like the computer.  You need to give clear instructions on what to do **for** each envelope.  So you might say something like this:   
+   
+*"For each of these 1000 envelopes, count the seeds and label the envelope with today's date, the number of seeds, and your initials."*  
+   
+If I were to convert that to pseudo-code it might look something like this:  
+
+   
+```r
+# This is not real code, it's just restructured like code
+for (each of the 1000 envelopes) { # do everything between these braces  
+	  count seeds -> number of seeds
+	  print on envelope( today's date )
+	  print on envelope( number of seeds )
+	  print on envelope( your initials )
+}
+```  
+So looking at the pseudo-code above, you can actually read it like a sentence in English.  This will be the same with code in R once you get used to the syntax.
+    
+### Loops in the R world ###
+In R, there are there are two ways to do **for loops**:
 
 If you have a vector of values like this:  
 
