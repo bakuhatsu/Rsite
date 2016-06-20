@@ -269,17 +269,18 @@ print(zsquaredloop[1:10])
 Which way was faster?  Be careful of using loops when there is a faster way if you are dealing with large datasets.
 
 ## Data types in R ##
+R uses the terms `class` and `type` to refer to very similar concepts, so for the purpose of this tutorial we will use the term "data type" to refer to this idea.  Just know that the output of `typeof(x)` and of `class(x)` may use slightly different terms (an example is shown in the table below). For things like DataFrames, it is probably simplest to use `class(x)` to determine the data type. 
 
 **Basic data types for individual values:**  
 
-| Used for:     | Data type     	| other names     | Description     | 
-|:-------------|:-------------|:---------------|:-------------|
-| numbers    | **numeric**    | Double  	| numbers, ex: 3.0, 24, -100, 2.4, -87.3 |
-| numbers    | **integer**    | int  	| numbers, ex: 3, 24, -100, (no decimals) | 
-| asking a yes/no question    | **logical**   	| boolean | `TRUE` or `FALSE` (also `T` or `F`), but not `true` or `false` |
-| words    | **character**   | String      	| character strings are any text.  define a character by surrounding it with quotes, ex: `"hello"`.  A number surrounded by quotes will be interpreted as a character string, ex `"3"`.|
+| Used for:     | `class(x)`	| `typeof(x)`     	| other names     | Description     | 
+|:-------------|:-------------|:---------------|:-------------|:-------------|
+| numbers    | **numeric**    | **double**    | Double  	| numbers, ex: 3.0, 24, -100, 2.4, -87.3 |
+| numbers    | **integer**    | **integer**    | int  	| numbers, ex: 3, 24, -100, (no decimals) | 
+| asking a yes/no question    | **logical**   	| **logical**   	| boolean | `TRUE` or `FALSE` (also `T` or `F`), but not `true` or `false` |
+| words    | **character**   | **character**   | String      	| character strings are any text.  define a character by surrounding it with quotes, ex: `"hello"`.  A number surrounded by quotes will be interpreted as a character string, ex `"3"`.|
 
-Note: These are the main categories of data types that you need to worry about, but there are a few others.  Under-the-hood, R will make some decisions to minimize memory usage.  For example, numeric values that are whole numbers will sometimes be saved as `integers`, but can also be saved as `numeric` (Doubles).  Those that are demical numbers will always be saved as `numeric` (Doubles).  Doubles take up more memory than integers.   
+**Note:** These are the main categories of data types that you need to worry about, but there are a few others.  You generally do not need to specify the types of your variables in R as in some other programming languages.  Under-the-hood, R will make some decisions for you about what type a variable should be.  Numeric values that are whole numbers could be saved as `integers` or as `doubles`, but in reality R will usually save numbers you type as `doubles`.   This takes up more memory than saving as `integers`, but it is also more flexible.  If you want to force R to save a number as an `integer`, you can do so by adding the letter "L" after the number like: `x <- 1L`.    
 
 To force a number to be saved as an integer, add "L" after the number.  So `class(1)` returns "numeric", whereas `class(1L)` returns "integer" in R.  This also means that you will use less memory by typing `1L + 1L` than by typing `1 + 1` (no noticable speed difference in such a simple example, but for very large datasets it can sometimes make a difference).
 
