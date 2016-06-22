@@ -269,8 +269,12 @@ print(zsquaredloop[1:10])
 Which way was faster?  Be careful of using loops when there is a faster way if you are dealing with large datasets.
 
 ## Data types in R ##
-R uses the terms `class` and `type` to refer to very similar concepts, so for the purpose of this tutorial we will use the term "data type" to refer to this idea.  Just know that the output of `typeof(x)` and of `class(x)` may use slightly different terms (an example is shown in the table below). For things like DataFrames, it is probably simplest to use `class(x)` to determine the data type. 
-
+R uses the terms `class` and `type` to refer to very similar concepts, so for the purpose of this tutorial we will use the term "data type" to refer to this idea.  Just know that the output of `typeof(x)` and of `class(x)` may use slightly different terms (an example is shown in the table below). For most things, it is probably the most straightforward to use `class(x)` to determine the data type of an object.  
+  
+***For advanced users:***  
+`class` *refers to the classification of an object used by the programming layer to determine what properties the object has and how functions act on it.*  
+`typeof` *gives you the form in which an object is stored in memory.*
+  
 **Basic data types for individual values:**  
 
 | Used for:     | `class(x)`	| `typeof(x)`     	| other names     | Description     | 
