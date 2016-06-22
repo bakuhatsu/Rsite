@@ -331,7 +331,6 @@ stderr <- function(x) {
 	y <- sqrt(var(x)/length(x))
 	return(y)
 }
-
 ```
 
 And here is how you would run that function: 
