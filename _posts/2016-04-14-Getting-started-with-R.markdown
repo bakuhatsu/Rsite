@@ -65,7 +65,10 @@ Or even conditionally replace text/add abbreviations as desired and get this:
 | Col wt | 12 | WS | 3	| 14.0 | ... |
 | ... | ... | ... | ... | ... | ... |   
 
-- Shiny webapps: interactive plots that can be viewed from a web browser [http://shiny.rstudio.com](http://shiny.rstudio.com)
+- Shiny webapps: interactive plots that can be viewed from a web browser [http://shiny.rstudio.com](http://shiny.rstudio.com)  
+See also: `flexdashboards` and `shinydashboards`
+![image](http://rmarkdown.rstudio.com/flexdashboard/images/shiny-biclust.png)  
+[https://jjallaire.shinyapps.io/shiny-biclust/]()
 
 - LaTeX tables suitible for publication can be directly generated from your data
 
