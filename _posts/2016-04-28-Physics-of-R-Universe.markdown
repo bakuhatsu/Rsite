@@ -351,8 +351,15 @@ For example you could do this:
 > b <- stderr(ABA_levels_example)
 > 
 > print(a)
+[1] 0.2741532
 > print(b)
-> print(a+b)
+[1] 3.49285
+> print(a+b) # If we wanted to add the sd errors
+[1] 3.767003
+> mean(c(a,b)) # If we wanted to average the sd errors
+[1] 1.883502
+> max(a,b) # If we wanted the max between the two sd errors
+[1] 3.49285
 ``` 
 
 This allows us to easily do complex calculations without writing out all of the code for individual commands.  Above, we set the variables `a` and `b` to contain the standard error for the GA measurements and the standard error for the ABA measurements (just a random example).  We can then perform other actions with `a` and `b`, such as adding them or feeding them to another function.  Nesting these sorts of calls — making function calls on the returned value of other functions — is the basis of all R data analysis.  
