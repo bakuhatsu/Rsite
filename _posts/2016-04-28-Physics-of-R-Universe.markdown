@@ -294,7 +294,7 @@ There is one data type that I didn't mention called `factors` which comes up in 
 
 Some more useful info on factors here: [http://www.stat.berkeley.edu/~s133/factors.html](http://www.stat.berkeley.edu/~s133/factors.html)
 
-## Data types that are made up of lists or tables of variables include: ##
+## Data types made up of lists or tables ##
 
 | Data type     	| Code to create this type of object     | Contents     | Dimensions | 
 |:-------------|:---------------|:--------------|:-----------|
@@ -304,13 +304,14 @@ Some more useful info on factors here: [http://www.stat.berkeley.edu/~s133/facto
 | data frames   	| `column1 <- c(1,2,3,4)` <br>`column2 <- c("red", "white", "red", NA)` <br>`column3 <- c(TRUE,TRUE,TRUE,FALSE)` <br>`df <- data.frame(column1, column2, column3)` <br>`# set column names` <br> `names(df) <- c("ID","Treatment","Measurement")`  | like an excel sheet, Columns are names and have the same data type within a column, rows can contain different data type and rownames are optional | 2 |
 | lists         	| `list(item1, item2, item3)` or <br> `list(name1 = item1, name2 = item2, name3 = item3)` | multiple types ok | 1 |
 	
-You can check the data type of any variable in R by using the `class()` function.  So `class("hello")` would return `"character"` and `class(23)` would return `"numeric"`.  If you call class on a list, it will return `"list"`, not the class of the items within the list, since they might be different.  But if you call class of a vector, it will return the data type of the contents.  So `class(c(1,2,3))` will return `"numeric"`.
+**Checking types:**  
+You may remember that you can check the data type of any variable in R by using the `class()` function.  So `class("hello")` would return `"character"` and `class(23)` would return `"numeric"`.  If you call class on a list, it will return `"list"`.  If you call class on a dataFrame it will return `data.frame`.  But if you call class of a vector, it will return the data type of the contents.  So `class(c(1,2,3))` will return `"numeric"`.
 
 **Note on vectors:**   
 These are lists of elements that are all of the same data type.  You can get an element from a specific index (for example index 1) in the list with vectorName[1].  Remember that in R counting starts from 1, while in some other programming languages (such as python), counting starts from 0.  So the first element of vector x in R is x[1], but in python would be x[0]
 
 **Note on lists:**  
-very similar to vectors, but some functions require one or the other (create with `list()` or change to not a list with `unlist()` Elements in a list can be associated with names, so you can call an element by its index or it's name. **(*Actually, you can also do this with vectors by setting `names(vector)`, but this is used less frequently than names for list elements.*)**  You can also store multiple elements of differen data types within the same list, which is not possible in vectors.
+Lists are very similar to vectors, but some functions require one or the other (create with `list()` or change to not a list with `unlist()` Elements in a list can be associated with names, so you can call an element by its index or it's name. **(*Actually, you can also do this with vectors by setting `names(vector)`, but this is used less frequently than names for list elements.*)**  You can also store multiple elements of different data types within the same list, which is not possible in vectors.
 
 Check out Quick-R for more info on data types in R: [http://statmethods.net/input/datatypes.html] (http://statmethods.net/input/datatypes.html)  
 
@@ -320,7 +321,9 @@ Functions are a bunch of R code set up in such a way that it can be reused to pe
 
 Functions usually have an input variable or variables and often return an output, print something to the screen, or display a graphic.  
 
-Here is the structure of a function (it is basically the same for the functions that I have written and for those that are provided in packages:
+Many functions are included with R by default, such as the function `mean()`, which gives you the mean of a set of numbers.  When you install and then load a package you get access to many more functions.  For example if I install the **`ggplot2`** package then I can use the `ggplot()`, `qplot()`, etc.  But you can also write your own functions with very little effort.  
+
+Here is the structure of a function that calculates the standard error for a set of numbers:
 
 ```r
 # Standard Error function:
@@ -348,10 +351,12 @@ For example you could do this:
 > ABA_levels_example <- c(55, 44, 66, 54, 56)
 > b <- stderr(ABA_levels_example)
 > 
-> a > b # use this command to ask "is a greater than b?"
-[1] FALSE
-
+> print(a)
+> print(b)
+> print(a+b)
 ``` 
 
-This allows us to easily do complex calculations without writing out all of the code for individual commands.  Above, we showed that the standard error for the GA measurements was not larger than the standard error for the ABA measurements (just a random example).  Nesting these sorts of calls — making function calls on the returned value of other functions — is the basis of all R data analysis.  We want to type the least amount of code to get the work done.
+This allows us to easily do complex calculations without writing out all of the code for individual commands.  Above, we set the variables `a` and `b` to contain the standard error for the GA measurements and the standard error for the ABA measurements (just a random example).  We can then perform other actions with `a` and `b`, such as adding them or feeding them to another function.  Nesting these sorts of calls — making function calls on the returned value of other functions — is the basis of all R data analysis.  
+  
+***The golden rule is to try and type the least amount of code to get the work done.***
 
