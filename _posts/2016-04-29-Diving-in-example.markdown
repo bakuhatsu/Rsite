@@ -186,12 +186,53 @@ That looks much better!
 Next, if we wanted to plot the temperature (**MNTM**) data, we only need to go back and change the code in a few places.
 
 ```r
+# Import data
+dataFL <-read.csv("ClimateDataset_Florida.csv", header = T, na.strings = "-9999", stringsAsFactors = F)
+
+# if you want to select the file in finder/explorer you can use file.choose()
+dataFL <-read.csv(file.choose(), header = T, na.strings = "-9999", stringsAsFactors = F)
+
+# Lets look at how the average temperature for a year (across all 12 months) has changed over the years from 1931 to 2015
+# To do this, we'll want to consider all values with the same year
+
+# split 194210 into two columns: 1940 + 10
+dateColumn <- as.character(dataFL$DATE) # makes it into a string
+dataFL$YEAR <- as.integer(substring(dateColumn, first = 1, last = 4))
+dataFL$MONTH <- as.integer(substring(dateColumn, first = 5, last = 7))
+rm(dateColumn) # remove the date column variable
+
+# And subset the table to only include the columns that you want
+attach(dataFL)
+dataFL <- data.frame(STATION_NAME, YEAR, MONTH, MNTM)
+detach(dataFL)
+require("dplyr") # makes it easy to subet data
+data <- dplyr::filter(data, !is.na(MNTM)) # remove rows with NAs
+
+# The location names are too long, lets shorten them to just the state name
+# To do this, first we need to extract the 2 letter state abbreviation from
+# each station name in our dataframe.  
+stateAbbrev <- substring(dataFL$STATION_NAME, first = nchar(as.character(dataFL$STATION_NAME)) - 4, last = nchar(as.character(dataFL$STATION_NAME)) - 3) # last digits of name is: FL US
+
+# Next we can use the built-in R tools to convert state abbreviations into state names.
+dataFL$STATION_NAME <- state.name[match(stateAbbrev,state.abb)]
+rm(stateAbbrev)
+
+# Load the summarySE function
+source("summarySE.R") # put it in your working directory
+
+# Create a summary of the data
+dataFLsumm <- summarySE(dataFL, measurevar="MNTM", groupvars=c("STATION_NAME", "YEAR"))
+
+dataFLsumm <- dplyr::filter(dataFLsumm, N==12) # only count those years with 12 months of data
+
+## Plot the data ##
+require("ggplot2")
+
 ggplot(data=dataFLsumm, aes(x=YEAR, y=MNTM, group=STATION_NAME, colour=STATION_NAME)) + 
   #geom_errorbar(aes(ymin=MNTM-se, ymax=MNTM+se), width=2) + # Add/adjust errbars
   geom_ribbon(aes(ymin=MNTM-se, ymax=MNTM+se), alpha = 0.3) +
   geom_line(size=0.8) + 
   geom_point(size=2.5) +
-  #scale_colour_hue(name="",  labels=c("Texas", "Florida", "Missouri", "New York", "Alaska")) + #temp#
   xlab("Year") + # Set x-axis label
   ylab("Average temperature") + # Set y-axis label
   #labs(title=title) + # Set plot title
