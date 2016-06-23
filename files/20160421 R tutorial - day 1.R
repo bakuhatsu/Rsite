@@ -61,6 +61,7 @@ attach(dataFL)
 dataFL <- data.frame(STATION_NAME, YEAR, MONTH, TPCP)
 #dataFL <- data.frame(STATION_NAME, YEAR, MONTH, MNTM)
 detach(dataFL)
+#install.packages("dplyr") # Run this if you don't have this package already
 require("dplyr") # makes it easy to subet data
 dataFL <- dplyr::filter(dataFL, !is.na(TPCP)) # remove rows with NAs
 #data <- dplyr::filter(data, !is.na(MNTM)) # remove rows with NAs
@@ -75,15 +76,13 @@ dataFL$STATION_NAME <- state.name[match(stateAbbrev,state.abb)]
 rm(stateAbbrev)
 
 # Load the summarySE function
-source('~/Dropbox/00. Code files/summarySE.R')
-#install.packages("doBy")
-#install.packages("survival")
-#source("summarySE.R") # put it in your working directory
+#install.packages("doBy") # Run this if you don't have this package already
+#install.packages("survival") # Run this if you don't have this package already
+source("summarySE.R") # put it in your working directory
+
 # Create a summary of the data
 dataFLsumm <- summarySE(dataFL, measurevar="TPCP", groupvars=c("STATION_NAME", "YEAR"))
 #dataFLsumm <- summarySE(dataFL, measurevar="MNTM", groupvars=c("STATION_NAME", "YEAR"))
-
-require("dplyr") # makes it easy to subet data
 
 dataFLsumm <- dplyr::filter(dataFLsumm, N==12) # only count those years with 12 months of data
 
@@ -91,17 +90,11 @@ dataFLsumm <- dplyr::filter(dataFLsumm, N==12) # only count those years with 12 
 require("ggplot2")
 
 ggplot(data=dataFLsumm, aes(x=YEAR, y=TPCP, group=STATION_NAME, colour=STATION_NAME)) + 
-  geom_errorbar(aes(ymin=TPCP-se, ymax=TPCP+se), width=2) + # Add/adjust errbars
+  #geom_errorbar(aes(ymin=TPCP-se, ymax=TPCP+se), width=2) + # Add/adjust errbars
+  geom_ribbon(aes(ymin=TPCP-se, ymax=TPCP+se), alpha = 0.3) +
   geom_line(size=0.8) + 
   geom_point(size=2.5) +
-  scale_colour_hue(name="",  labels=c("Texas", "Florida", "Missouri", "New York", "Alaska")) + #temp#
-  #scale_colour_hue(name="Line",
-  #breaks=c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20), 
-  #                 labels=Line) +
-  #c("0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20")) +
-  #scale_colour_brewer(name="Weeks AR",palette="Spectral") +
-  #scale_colour_gradient(limits=c(0, 16), low="gray23", high="yellow") +
-  #xlab("Hours of imbibition in the light at 22ºC") + # Set x-axis label
+  #scale_colour_hue(name="",  labels=c("Texas", "Florida", "Missouri", "New York", "Alaska")) + #temp#
   xlab("Year") + # Set x-axis label
   ylab("Average precipitation") + # Set y-axis label
   #labs(title=title) + # Set plot title
@@ -114,13 +107,6 @@ ggplot(data=dataFLsumm, aes(x=YEAR, y=MNTM, group=STATION_NAME, colour=STATION_N
   geom_line(size=0.8) + 
   geom_point(size=2.5) +
   #scale_colour_hue(name="",  labels=c("Texas", "Florida", "Missouri", "New York", "Alaska")) + #temp#
-  #scale_colour_hue(name="Line",
-  #breaks=c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20), 
-  #                 labels=Line) +
-  #c("0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20")) +
-  #scale_colour_brewer(name="Weeks AR",palette="Spectral") +
-  #scale_colour_gradient(limits=c(0, 16), low="gray23", high="yellow") +
-  #xlab("Hours of imbibition in the light at 22ºC") + # Set x-axis label
   xlab("Year") + # Set x-axis label
   ylab("Average temperature") + # Set y-axis label
   #labs(title=title) + # Set plot title
