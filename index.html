@@ -7,6 +7,9 @@ layout: default
   <ol class="post-list">
     {% for post in paginator.posts reversed %}
       <li>
+      	<!--<a class="pull-left hidden-xs" href="/2016/04/mobas-and-class-based-team-shooters.html"><img src="/images/thumbnail/overwatch.jpg" srcset="/images/thumbnail/overwatch.2x.jpg 2x" class="media-object img-rounded" width="96" height="96" itemprop="thumbnailUrl" alt="Thumbnail image for the post 'MOBAs and Class Based Team Shooters of 2016'"></a>-->
+      	<a class="pull-left hidden-xs" href="{{ post.image || post_thumbnail }}"><img src="{{ post.image || post_thumbnail }}" class="media-object img-rounded" width="96" height="96" itemprop="thumbnailUrl" alt="Thumbnail image for the post '{{ post.title }}'"></a>
+      	
         <h2 class="post-list__post-title post-title"><a href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}" title="{{ post.title }}">{{ post.title }}</a></h2>
         <p class="excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}&hellip;</p>
         <div class="post-list__meta"><time datetime="{{ post.date | date: "%-d %b %Y" }}" class="post-list__meta--date date">{{ post.date | date: "%-d %b %Y" }}</time> &#8226; <span class="post-meta__tags"> {% for tag in post.tags %}<a href="{{ site.baseurl }}tags/#{{ tag }}">{{ tag }}</a> {% endfor %}</span></div>

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Lets dive in - a hands-on example
+image: images/TestPlot.png
 author: Sven Nelson
 categories: [R tutorial]
 tags: [Part 3]
@@ -236,7 +237,7 @@ ggplot(data=dataFLsumm, aes(x=YEAR, y=MNTM, group=STATION_NAME, colour=STATION_N
   xlab("Year") + # Set x-axis label
   ylab("Average temperature") + # Set y-axis label
   #labs(title=title) + # Set plot title
-  theme_bw()
+  theme_bw()  
 ```
 
 **This file contains the code from today:**  

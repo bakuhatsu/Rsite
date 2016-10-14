@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Getting started with R
+image: images/ExampleRplots.png
 author: Sven Nelson
 categories: [R tutorial]
 tags: [Part 1]

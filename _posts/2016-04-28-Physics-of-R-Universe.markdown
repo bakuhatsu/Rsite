@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Understanding the physics of the R universe
+image: images/RStudio_screenshot.png
 author: Sven Nelson
 categories: [R tutorial]
 tags: [Part 2]
