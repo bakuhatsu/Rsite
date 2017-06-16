@@ -245,3 +245,6 @@ ggplot(data=dataFLsumm, aes(x=YEAR, y=MNTM, group=STATION_NAME, colour=STATION_N
 *Don't look too far, this file may contain spoilers!*
 
 **Next up:** making this all into a function!
+
+**For tutorial on 6/16/2017 you will need this file:**
+[chopstick_effectiveness.xlsx](/Rsite/files/chopstick_effectiveness.xlsx) 
