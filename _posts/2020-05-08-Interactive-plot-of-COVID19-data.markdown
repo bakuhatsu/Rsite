@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Lets dive in - a hands-on example
+title: Getting an always up-to-date COVID dataset
 image: images/20200507_COVID-19_plot.svg
 author: Sven Nelson
 categories: [R tutorial]
-tags: [Part 3]
+tags: [Part 4]
 ---
 Here's another example.  We're all stuck sheltering at home, so why don't we make an interactive plot of COVID-19 data.  I'll put the initial code below and you can use that as a starting point and tweak or update as you please. 
 
