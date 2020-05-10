@@ -113,6 +113,8 @@ covidTimecourse <- function(data = coronavirus, metric = "cases", country = "US"
     data[data$type == "recovered",]$cases <- cumsum(data[data$type == "recovered",]$cases)
     
   }
+  # This line is only necessary for a few countries where there are multiple measurements per date to summarize the data.
+  data <- Rmisc::summarySE(data, measurevar = metric, groupvars = c("date","Country.Region", "type"))
   
   data$date <- as.POSIXct(as.Date(data$date, format = "%Y%m%d"))
   
